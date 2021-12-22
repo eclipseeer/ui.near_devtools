@@ -1,11 +1,14 @@
-import { css } from '@emotion/react';
+import { Sidebar } from './Sidebar/Sidebar';
+import { Tabs } from './Tabs/Tabs';
+import { Content } from './Content/Content';
+import { cls } from './App.css';
 
-const container = css`
-  background-color: red;
-  color: aliceblue;
-  @media (min-width: 1000px) {
-    background-color: black;
-  }
-`;
-
-export const App = () => <div css={container}>App</div>;
+export const App = () => (
+  <div css={cls.container}>
+    <div css={cls.card}>
+      <Sidebar />
+      <Tabs />
+      <Content />
+    </div>
+  </div>
+);
