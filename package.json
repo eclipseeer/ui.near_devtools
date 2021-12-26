@@ -7,6 +7,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "immer": "^9.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -15,7 +16,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "eject": "react-scripts eject"
+    "pretti": "prettier src"
   },
   "eslintConfig": {
     "extends": [
