@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 const container = css`
   grid-area: c;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   background: #ffffff;
   border-radius: 10px;

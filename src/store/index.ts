@@ -1,26 +1,14 @@
 import { createStore } from '../storio';
 import { tabs } from './tabs';
+import { actions as actionsSlice } from './actions';
 
 export const store = createStore({
-  state: {
-    isLoading: false,
-    user: {
-      accountId: 'id1',
-      name: 'Alex',
-    },
-    space: {
-      id: '1',
-      title: 'My Space',
-    },
-  },
-  actions: {
-    updateUserName: ({ payload, slice }: any) => {
-      slice.user.name = payload;
-    }
-  },
   slices: {
     tabs,
+    actions: actionsSlice,
+    environment: {},
+    keyVault: {},
   },
 });
 
-console.log(store.state?.get());
+// console.log(store.state?.get());
