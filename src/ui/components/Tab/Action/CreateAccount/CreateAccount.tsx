@@ -4,4 +4,8 @@ interface Props {
   action: any;
 }
 
-export const CreateAccount = ({ action }: Props) => <div css={cls.container}>Create Account</div>;
+export const CreateAccount = ({ action }: Props) => (
+  <div css={cls.container}>
+    <p>Create Account</p>
+  </div>
+);

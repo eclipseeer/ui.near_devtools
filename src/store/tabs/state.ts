@@ -1,8 +1,9 @@
 export const state = {
   currentTab: {
-    tabId: 'b',
-    title: 'Key Vault',
-    type: 'keyVault',
+    tabId: 'a',
+    title: 'My func call',
+    type: 'action',
+    actionId: 'a1',
   },
   list: ['a', 'b', 'c', 'd'],
   map: {

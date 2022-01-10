@@ -12,6 +12,9 @@ export const Action = ({ actionId }: Props) => {
 
   return (
     <div css={cls.container}>
+      <p>
+        <b>{action.type}</b>
+      </p>
       {action.type === 'functionCall' && <FunctionCall action={action} />}
       {action.type === 'createAccount' && <CreateAccount action={action} />}
     </div>
