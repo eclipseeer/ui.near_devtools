@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 const input = css`
   height: 48px;
   width: 90vw;
-  max-width: 360px;
+  max-width: 1100px;
   position: relative;
   display: inline-flex;
   border: 3px solid #a463b0;

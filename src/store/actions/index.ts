@@ -1,7 +1,9 @@
 import { state } from './state';
-import { actions as storioActions } from './actions';
+import { actions } from './actions';
+import { effects } from './effects';
 
-export const actions = {
+export const actionsSlice = {
   state,
-  actions: storioActions,
+  actions,
+  effects,
 };

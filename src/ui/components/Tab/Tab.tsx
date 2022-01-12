@@ -5,7 +5,7 @@ import { cls } from './Tab.css';
 
 export const Tab = () => {
   const [currentTab] = useStoreState([(state: any) => state.tabs.currentTab]);
-  console.log(currentTab);
+  // console.log(currentTab);
 
   return (
     <div css={cls.container}>

@@ -1,6 +1,7 @@
 import { useStoreState } from '../../../../storio';
 import { FunctionCall } from './FunctionCall/FunctionCall';
 import { CreateAccount } from './CreateAccount/CreateAccount';
+import { DeleteAccount } from './DeleteAccount/DeleteAccount';
 import { cls } from './Action.css';
 
 interface Props {
@@ -17,6 +18,7 @@ export const Action = ({ actionId }: Props) => {
       </p>
       {action.type === 'functionCall' && <FunctionCall action={action} />}
       {action.type === 'createAccount' && <CreateAccount action={action} />}
+      {action.type === 'deleteAccount' && <DeleteAccount action={action} />}
     </div>
   );
 };

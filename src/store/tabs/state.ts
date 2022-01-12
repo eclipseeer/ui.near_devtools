@@ -1,11 +1,11 @@
 export const state = {
   currentTab: {
-    tabId: 'a',
-    title: 'My func call',
+    tabId: 'c',
+    title: 'Delete acc',
     type: 'action',
-    actionId: 'a1',
+    actionId: 'a3',
   },
-  list: ['a', 'b', 'c', 'd'],
+  list: ['a', 'c', 'd'],
   map: {
     a: {
       tabId: 'a',
@@ -13,15 +13,16 @@ export const state = {
       type: 'action',
       actionId: 'a1',
     },
-    b: {
-      tabId: 'b',
-      title: 'Key Vault',
-      type: 'keyVault',
-    },
+    // b: {
+    //   tabId: 'b',
+    //   title: 'Key Vault',
+    //   type: 'keyVault',
+    // },
     c: {
       tabId: 'c',
-      title: 'Environment',
-      type: 'environment',
+      title: 'Delete acc',
+      type: 'action',
+      actionId: 'a3',
     },
     d: {
       tabId: 'd',

@@ -1,5 +1,5 @@
 export const state = {
-  list: ['a1', 'a2'],
+  list: ['a1', 'a2', 'a3'],
   map: {
     a1: {
       actionId: 'a1',
@@ -10,6 +10,11 @@ export const state = {
       actionId: 'a2',
       title: 'Create My New Account',
       type: 'createAccount'
-    }
+    },
+    a3: {
+      actionId: 'a3',
+      title: 'Delete Account',
+      type: 'deleteAccount'
+    },
   }
 };
