@@ -1,11 +1,11 @@
 export const state = {
   currentTab: {
-    tabId: 'c',
-    title: 'Delete acc',
+    tabId: 'e',
+    title: 'Delete Key',
     type: 'action',
-    actionId: 'a3',
+    actionId: 'a4',
   },
-  list: ['a', 'c', 'd'],
+  list: ['a', 'c', 'e'],
   map: {
     a: {
       tabId: 'a',
@@ -13,11 +13,11 @@ export const state = {
       type: 'action',
       actionId: 'a1',
     },
-    // b: {
-    //   tabId: 'b',
-    //   title: 'Key Vault',
-    //   type: 'keyVault',
-    // },
+    b: {
+      tabId: 'b',
+      title: 'Key Vault',
+      type: 'keyVault',
+    },
     c: {
       tabId: 'c',
       title: 'Delete acc',
@@ -30,5 +30,11 @@ export const state = {
       type: 'action',
       actionId: 'a2',
     },
+    e: {
+      tabId: 'e',
+      title: 'Delete Key',
+      type: 'action',
+      actionId: 'a4',
+    }
   },
 };

@@ -1,9 +1,9 @@
 import { useStoreState } from '../../../storio';
 import { Action } from './Action/Action';
 import { KeyVault } from './KeyVault/KeyVault';
-import { cls } from './Tab.css';
+import { cls } from './TabCard.css';
 
-export const Tab = () => {
+export const TabCard = () => {
   const [currentTab] = useStoreState([(state: any) => state.tabs.currentTab]);
   // console.log(currentTab);
 

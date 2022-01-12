@@ -1,11 +1,11 @@
 import { createStore } from '../storio';
 import { tabs } from './tabs';
-import { actionsSlice } from './actions';
+import { transactions } from './transactions';
 
 export const store = createStore({
   slices: {
     tabs,
-    actions: actionsSlice,
+    actions: transactions,
     environment: {},
     keyVault: {},
   },

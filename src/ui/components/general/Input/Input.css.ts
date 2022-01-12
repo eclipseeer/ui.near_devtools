@@ -7,9 +7,9 @@ const input = css`
   position: relative;
   display: inline-flex;
   border: 3px solid #a463b0;
-  border-radius: 25px;
+  border-radius: 10px;
   outline: none;
-  font-size: 18px;
+  font-size: 14px;
   background-color: inherit;
   box-sizing: border-box;
   padding: 5px 15px;

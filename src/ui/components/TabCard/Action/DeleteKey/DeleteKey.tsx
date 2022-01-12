@@ -1,27 +1,27 @@
 import { useForm } from 'react-hook-form';
 import { Input } from '../../../general/Input/Input';
-import { cls } from './DeleteAccount.css';
+import { cls } from './DeleteKey.css';
 import { useStoreEffects } from '../../../../../storio';
 
-// interface Props {
-//   action: any;
-// }
+interface Props {
+  action: any;
+}
 
-// @ts-ignore
-export const DeleteAccount = () => {
-  const deleteAccount = useStoreEffects((actions: any) => actions.actions.deleteAccount);
+export const DeleteKey = ({ action }: Props) => {
+  const deleteKey = useStoreEffects((actions: any) => actions.actions.deleteKey);
   const methods = useForm({
     defaultValues: {
-      signerId: 'abc2.eclipseer.linkdrop.testnet',
-      signerSk: 'ed25519:2W3McSV6SGxtiuPEGzjoXi8REqUoEJFAT65JKC9J77UzApSFQQvm9Q6ofWU1px1iVMLzQFWiE2gZ1jWc6f617guA',
-      beneficiaryId: 'eclipseer.linkdrop.testnet'
+      signerId: 'eclipseeer2.testnet',
+      signerSk:
+        'ed25519:rth5jioLiJiHUtRQ2i7Xebw1Frd2bMS45ufEZiErue15ME1kRnuzGfpTpQ9jFhekeJi1wQMmTiL4fKq7avbCxDU',
+      publicKey: '',
     },
   });
 
   const { handleSubmit, register } = methods;
 
   const onSubmit = handleSubmit((values) => {
-    deleteAccount(values);
+    deleteKey(values);
   });
 
   return (
@@ -35,8 +35,8 @@ export const DeleteAccount = () => {
         <Input register={register} name="signerSk" />
       </span>
       <span css={cls.inputLabel}>
-        Beneficiary Account Id
-        <Input register={register} name="beneficiaryId" />
+        Public Key To Delete
+        <Input register={register} name="publicKey" />
       </span>
       <button onClick={onSubmit} css={cls.button}>
         Submit

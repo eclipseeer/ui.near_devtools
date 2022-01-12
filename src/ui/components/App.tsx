@@ -1,6 +1,6 @@
 import { Sidebar } from './Sidebar/Sidebar';
 import { Tabs } from './Tabs/Tabs';
-import { Tab } from './Tab/Tab';
+import { TabCard } from './TabCard/TabCard';
 import { cls } from './App.css';
 
 export const App = () => (
@@ -8,7 +8,7 @@ export const App = () => (
     <div css={cls.card}>
       <Sidebar />
       <Tabs />
-      <Tab />
+      <TabCard />
     </div>
   </div>
 );
