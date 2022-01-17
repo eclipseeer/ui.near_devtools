@@ -1,14 +1,14 @@
 import { useForm } from 'react-hook-form';
-import { Input } from '../../../general/Input/Input';
+import { Input } from '../../../../general/Input/Input';
 import { cls } from './DeleteAccount.css';
-import { useStoreEffects } from '../../../../../storio';
+import { useStoreEffects } from '../../../../../../storio';
 
 interface Props {
   action: any;
 }
 
 export const DeleteAccount = ({ action }: Props) => {
-  const deleteAccount = useStoreEffects((actions: any) => actions.actions.deleteAccount);
+  const deleteAccount = useStoreEffects((e: any) => e.actions.deleteAccount);
   const methods = useForm({
     defaultValues: {
       signerId: 'abc2.eclipseer.linkdrop.testnet',

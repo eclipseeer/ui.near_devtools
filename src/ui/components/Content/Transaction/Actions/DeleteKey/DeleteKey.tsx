@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
-import { Input } from '../../../general/Input/Input';
+import { Input } from '../../../../general/Input/Input';
 import { cls } from './DeleteKey.css';
-import { useStoreEffects } from '../../../../../storio';
+import { useStoreEffects } from '../../../../../../storio';
 
 interface Props {
   action: any;

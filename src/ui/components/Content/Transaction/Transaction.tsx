@@ -1,15 +1,15 @@
 import { useStoreState } from '../../../../storio';
-import { FunctionCall } from './FunctionCall/FunctionCall';
-import { CreateAccount } from './CreateAccount/CreateAccount';
-import { DeleteAccount } from './DeleteAccount/DeleteAccount';
-import { DeleteKey } from './DeleteKey/DeleteKey';
-import { cls } from './Action.css';
+import { FunctionCall } from './Actions/FunctionCall/FunctionCall';
+import { CreateAccount } from './Actions/CreateAccount/CreateAccount';
+import { DeleteAccount } from './Actions/DeleteAccount/DeleteAccount';
+import { DeleteKey } from './Actions/DeleteKey/DeleteKey';
+import { cls } from './Transaction.css';
 
 interface Props {
   actionId: any;
 }
 
-export const Action = ({ actionId }: Props) => {
+export const Transaction = ({ actionId }: Props) => {
   const [action, outcome] = useStoreState(
     [(s: any) => s.actions.map[actionId], (s: any) => s.actions.outcome],
     [actionId],

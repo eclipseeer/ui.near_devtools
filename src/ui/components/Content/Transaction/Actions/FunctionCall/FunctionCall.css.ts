@@ -7,9 +7,10 @@ const container = css`
 `;
 
 const inputLabel = css`
-  width: 600px;
+  width: 99%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const cls = {
