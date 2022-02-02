@@ -1,4 +1,5 @@
 export const state = {
+  runtimeData: 1,
   currentTab: {
     tabId: 'e',
     title: 'Delete Key',

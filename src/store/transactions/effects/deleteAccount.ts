@@ -5,14 +5,14 @@ export const deleteAccount = async ({ payload }: any) => {
   const { signerId, signerSk, beneficiaryId } = payload;
 
   const keyStore = new keyStores.InMemoryKeyStore();
-  await keyStore.setKey('mainnet', signerId, KeyPair.fromString(signerSk));
+  await keyStore.setKey('testnet', signerId, KeyPair.fromString(signerSk));
 
   const near = await connect({
     headers: {},
-    // networkId: 'testnet',
-    // nodeUrl: 'https://rpc.testnet.near.org',
-    networkId: 'mainnet',
-    nodeUrl: 'https://rpc.mainnet.near.org',
+    networkId: 'testnet',
+    nodeUrl: 'https://rpc.testnet.near.org',
+    // networkId: 'mainnet',
+    // nodeUrl: 'https://rpc.mainnet.near.org',
     keyStore,
   });
 
