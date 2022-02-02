@@ -4,7 +4,7 @@ const container = css`
   grid-area: b;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 `;
 
 export const cls = {

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 const containerBase = css`
   height: 36px;
-  width: 200px;
+  width: 160px;
   display: flex;
   align-items: center;
   justify-content: center;

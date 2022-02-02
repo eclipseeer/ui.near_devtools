@@ -3,6 +3,7 @@ import { FunctionCall } from './Actions/FunctionCall/FunctionCall';
 import { CreateAccount } from './Actions/CreateAccount/CreateAccount';
 import { DeleteAccount } from './Actions/DeleteAccount/DeleteAccount';
 import { DeleteKey } from './Actions/DeleteKey/DeleteKey';
+import { DeployContract } from './Actions/DeployContract/DeployContract';
 import { cls } from './Transaction.css';
 
 interface Props {
@@ -21,6 +22,7 @@ export const Transaction = ({ actionId }: Props) => {
       {action.type === 'createAccount' && <CreateAccount action={action} />}
       {action.type === 'deleteAccount' && <DeleteAccount action={action} />}
       {action.type === 'deleteKey' && <DeleteKey action={action} />}
+      {action.type === 'deployContract' && <DeployContract />}
       <h2>Outcome</h2>
       <p>{outcome}</p>
     </div>

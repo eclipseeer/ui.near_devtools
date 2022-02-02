@@ -1,33 +1,28 @@
 export const state = {
   runtimeData: 1,
   currentTab: {
-    tabId: 'e',
-    title: 'Delete Key',
+    tabId: 'deployContract',
+    title: 'Deploy Contract',
     type: 'action',
-    actionId: 'a4',
+    actionId: 'a5',
   },
-  list: ['a', 'c', 'e'],
+  list: ['functionCall', 'c', 'e', 'd', 'deployContract'],
   map: {
-    a: {
-      tabId: 'a',
-      title: 'My func call',
+    functionCall: {
+      tabId: 'functionCall',
+      title: 'Function call',
       type: 'action',
       actionId: 'a1',
     },
-    b: {
-      tabId: 'b',
-      title: 'Key Vault',
-      type: 'keyVault',
-    },
     c: {
       tabId: 'c',
-      title: 'Delete acc',
+      title: 'Delete account',
       type: 'action',
       actionId: 'a3',
     },
     d: {
       tabId: 'd',
-      title: 'Create My New Account',
+      title: 'Create Account',
       type: 'action',
       actionId: 'a2',
     },
@@ -36,6 +31,12 @@ export const state = {
       title: 'Delete Key',
       type: 'action',
       actionId: 'a4',
+    },
+    deployContract: {
+      tabId: 'deployContract',
+      title: 'Deploy Contract',
+      type: 'action',
+      actionId: 'a5',
     }
   },
 };

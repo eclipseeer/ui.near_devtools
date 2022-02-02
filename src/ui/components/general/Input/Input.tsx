@@ -7,6 +7,7 @@ export const Input = ({
   textarea = false,
   cols,
   rows,
+  type = 'text',
 }: any) =>
   textarea ? (
     <textarea
@@ -17,5 +18,5 @@ export const Input = ({
       css={cls.textarea}
     />
   ) : (
-    <input {...register(name)} placeholder={placeholder} css={cls.input} />
+    <input {...register(name)} placeholder={placeholder} css={cls.input} type={type} />
   );

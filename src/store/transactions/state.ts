@@ -1,9 +1,9 @@
 export const state = {
-  list: ['a1', 'a2', 'a3', 'a4'],
+  list: ['a1', 'a2', 'a3', 'a4', 'a5'],
   map: {
     a1: {
       actionId: 'a1',
-      title: 'My func call',
+      title: 'Func call',
       type: 'functionCall'
     },
     a2: {
@@ -20,6 +20,11 @@ export const state = {
       actionId: 'a4',
       title: 'Delete Key',
       type: 'deleteKey'
+    },
+    a5: {
+      actionId: 'a5',
+      title: 'Deploy Contract',
+      type: 'deployContract'
     },
   },
   outcome: null,
