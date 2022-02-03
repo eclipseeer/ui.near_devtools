@@ -1,32 +1,32 @@
 import { useForm } from 'react-hook-form';
 import { Input } from '../../../../general/Input/Input';
 import { cls } from './FunctionCall.css';
-import { useStoreEffects } from '../../../../../../storio';
+import { useStoreActions, useStoreEffects } from '../../../../../../storio';
+import { useEffect } from 'react';
 
 interface Props {
   action: any;
 }
-// drop key
-// ed25519:w4Nb233J1hzb6tywhabjTKjsAysz9Y9N3fbDwzG3BU6 - ed25519:3V5rYNwYfYsSRzuAr8jhf64D6kRwppuy9k3m8CxXQxqNHLa2dGAe162sZNUwjXJxfkGtvf8XnG42qV5MnYrJcocW
-export const FunctionCall = ({ action }: Props) => {
-  const functionCall = useStoreEffects((e: any) => e.actions.functionCall);
-  const methods = useForm({
-    defaultValues: {
-      signerId: '',
-      signerSk: '',
-      contractId: '',
-      methodName: '',
-      args: `{}`,
-      terraGas: '50',
-      attachedDeposit: '',
-    },
-  });
 
-  const { handleSubmit, register } = methods;
+export const FunctionCall = ({ action }: Props) => {
+  const setFormData = useStoreActions((a: any) => a.actions.setFormData);
+  const functionCall = useStoreEffects((e: any) => e.actions.functionCall);
+
+  const { handleSubmit, register, getValues } = useForm({ defaultValues: action.formData });
 
   const onSubmit = handleSubmit((values) => {
     functionCall(values);
   });
+
+  useEffect(
+    () => () => {
+      setFormData({
+        actionId: action.actionId,
+        formData: getValues(),
+      });
+    },
+    [],
+  );
 
   return (
     <div css={cls.container}>

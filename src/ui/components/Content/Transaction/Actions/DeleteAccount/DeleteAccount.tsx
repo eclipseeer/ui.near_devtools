@@ -1,27 +1,32 @@
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Input } from '../../../../general/Input/Input';
+import { useStoreActions, useStoreEffects } from '../../../../../../storio';
 import { cls } from './DeleteAccount.css';
-import { useStoreEffects } from '../../../../../../storio';
 
 interface Props {
   action: any;
 }
 
 export const DeleteAccount = ({ action }: Props) => {
+  const setFormData = useStoreActions((a: any) => a.actions.setFormData);
   const deleteAccount = useStoreEffects((e: any) => e.actions.deleteAccount);
-  const methods = useForm({
-    defaultValues: {
-      signerId: '',
-      signerSk: '',
-      beneficiaryId: ''
-    },
-  });
 
-  const { handleSubmit, register } = methods;
+  const { handleSubmit, register, getValues } = useForm({ defaultValues: action.formData });
 
   const onSubmit = handleSubmit((values) => {
     deleteAccount(values);
   });
+
+  useEffect(
+    () => () => {
+      setFormData({
+        actionId: action.actionId,
+        formData: getValues(),
+      });
+    },
+    [],
+  );
 
   return (
     <div css={cls.container}>

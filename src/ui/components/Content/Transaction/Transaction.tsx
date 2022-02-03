@@ -22,7 +22,7 @@ export const Transaction = ({ actionId }: Props) => {
       {action.type === 'createAccount' && <CreateAccount action={action} />}
       {action.type === 'deleteAccount' && <DeleteAccount action={action} />}
       {action.type === 'deleteKey' && <DeleteKey action={action} />}
-      {action.type === 'deployContract' && <DeployContract />}
+      {action.type === 'deployContract' && <DeployContract action={action} />}
       <h2>Outcome</h2>
       <p>{outcome}</p>
     </div>

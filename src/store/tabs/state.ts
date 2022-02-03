@@ -1,12 +1,12 @@
 export const state = {
   runtimeData: 1,
   currentTab: {
-    tabId: 'deployContract',
-    title: 'Deploy Contract',
+    tabId: 'functionCall',
+    title: 'Function call',
     type: 'action',
-    actionId: 'a5',
+    actionId: 'a1',
   },
-  list: ['functionCall', 'c', 'e', 'd', 'deployContract'],
+  list: ['createAccount', 'deleteAccount', 'deleteKey', 'deployContract', 'functionCall'],
   map: {
     functionCall: {
       tabId: 'functionCall',
@@ -14,20 +14,20 @@ export const state = {
       type: 'action',
       actionId: 'a1',
     },
-    c: {
-      tabId: 'c',
+    deleteAccount: {
+      tabId: 'deleteAccount',
       title: 'Delete account',
       type: 'action',
       actionId: 'a3',
     },
-    d: {
-      tabId: 'd',
+    createAccount: {
+      tabId: 'createAccount',
       title: 'Create Account',
       type: 'action',
       actionId: 'a2',
     },
-    e: {
-      tabId: 'e',
+    deleteKey: {
+      tabId: 'deleteKey',
       title: 'Delete Key',
       type: 'action',
       actionId: 'a4',
@@ -37,6 +37,6 @@ export const state = {
       title: 'Deploy Contract',
       type: 'action',
       actionId: 'a5',
-    }
+    },
   },
 };

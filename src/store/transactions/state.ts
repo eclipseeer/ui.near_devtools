@@ -4,27 +4,52 @@ export const state = {
     a1: {
       actionId: 'a1',
       title: 'Func call',
-      type: 'functionCall'
+      type: 'functionCall',
+      formData: {
+        signerId: '',
+        signerSk: '',
+        contractId: '',
+        methodName: '',
+        args: `{}`,
+        terraGas: '50',
+        attachedDeposit: '0',
+      },
     },
     a2: {
       actionId: 'a2',
       title: 'Create My New Account',
-      type: 'createAccount'
+      type: 'createAccount',
+      formData: {},
     },
     a3: {
       actionId: 'a3',
       title: 'Delete Account',
-      type: 'deleteAccount'
+      type: 'deleteAccount',
+      formData: {
+        signerId: '',
+        signerSk: '',
+        beneficiaryId: ''
+      },
     },
     a4: {
       actionId: 'a4',
       title: 'Delete Key',
-      type: 'deleteKey'
+      type: 'deleteKey',
+      formData: {
+        signerId: '',
+        signerSk: '',
+        publicKey: '',
+      },
     },
     a5: {
       actionId: 'a5',
       title: 'Deploy Contract',
-      type: 'deployContract'
+      type: 'deployContract',
+      formData: {
+        signerId: '',
+        signerSk: '',
+        contractWasmFile: null,
+      },
     },
   },
   outcome: null,

@@ -1,27 +1,32 @@
 import { useForm } from 'react-hook-form';
 import { Input } from '../../../../general/Input/Input';
 import { cls } from './DeleteKey.css';
-import { useStoreEffects } from '../../../../../../storio';
+import { useStoreActions, useStoreEffects } from '../../../../../../storio';
+import { useEffect } from 'react';
 
 interface Props {
   action: any;
 }
 
 export const DeleteKey = ({ action }: Props) => {
+  const setFormData = useStoreActions((a: any) => a.actions.setFormData);
   const deleteKey = useStoreEffects((actions: any) => actions.actions.deleteKey);
-  const methods = useForm({
-    defaultValues: {
-      signerId: '',
-      signerSk: '',
-      publicKey: '',
-    },
-  });
 
-  const { handleSubmit, register } = methods;
+  const { handleSubmit, register, getValues } = useForm({ defaultValues: action.formData });
 
   const onSubmit = handleSubmit((values) => {
     deleteKey(values);
   });
+
+  useEffect(
+    () => () => {
+      setFormData({
+        actionId: action.actionId,
+        formData: getValues(),
+      });
+    },
+    [],
+  );
 
   return (
     <div css={cls.container}>

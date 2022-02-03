@@ -1,24 +1,32 @@
 import { useForm } from 'react-hook-form';
 import { Input } from '../../../../general/Input/Input';
-import { useStoreEffects } from '../../../../../../storio';
+import { useStoreActions, useStoreEffects } from '../../../../../../storio';
 import { cls } from './DeployContract.css';
+import { useEffect } from 'react';
 
-export const DeployContract = () => {
+interface Props {
+  action: any;
+}
+
+export const DeployContract = ({ action }: Props) => {
+  const setFormData = useStoreActions((a: any) => a.actions.setFormData);
   const deployContract = useStoreEffects((e: any) => e.actions.deployContract);
 
-  const methods = useForm({
-    defaultValues: {
-      signerId: '',
-      signerSk: '',
-      contractWasmFile: null,
-    },
-  });
-
-  const { handleSubmit, register } = methods;
+  const { handleSubmit, register, getValues } = useForm({ defaultValues: action.formData });
 
   const onSubmit = handleSubmit((values) => {
     deployContract(values);
   });
+
+  useEffect(
+    () => () => {
+      setFormData({
+        actionId: action.actionId,
+        formData: getValues(),
+      });
+    },
+    [],
+  );
 
   return (
     <div css={cls.container}>
@@ -38,4 +46,3 @@ export const DeployContract = () => {
     </div>
   );
 };
-
