@@ -42,7 +42,7 @@ export const DeployContract = ({ action }: Props) => {
         Contract WASM
         <Input register={register} name="contractWasmFile" type="file" />
       </span>
-      <button onClick={onSubmit}>Submit</button>
+      <button onClick={onSubmit} css={cls.button}>Submit</button>
     </div>
   );
 };

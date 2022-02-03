@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { button } from '../general/buttonCss';
 
 const container = css`
   display: flex;
@@ -15,5 +16,6 @@ const inputLabel = css`
 
 export const cls = {
   container,
-  inputLabel
+  inputLabel,
+  button,
 };

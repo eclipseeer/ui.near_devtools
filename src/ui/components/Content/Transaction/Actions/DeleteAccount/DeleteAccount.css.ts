@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { button } from '../general/buttonCss';
 
 const container = css`
   display: flex;
@@ -13,12 +14,8 @@ const inputLabel = css`
   align-items: center;
 `;
 
-const button = css`
-  width: 99%;
-`;
-
 export const cls = {
   container,
   inputLabel,
-  button
+  button,
 };

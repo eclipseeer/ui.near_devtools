@@ -58,7 +58,7 @@ export const FunctionCall = ({ action }: Props) => {
         Attached Deposit ($NEAR)
         <Input register={register} name="attachedDeposit" />
       </span>
-      <button onClick={onSubmit}>Submit</button>
+      <button onClick={onSubmit} css={cls.button}>Submit</button>
     </div>
   );
 };
