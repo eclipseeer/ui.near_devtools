@@ -12,15 +12,11 @@ export const FunctionCall = ({ action }: Props) => {
   const functionCall = useStoreEffects((e: any) => e.actions.functionCall);
   const methods = useForm({
     defaultValues: {
-      signerId: 'eclipseer.testnet',
-      signerSk: 'ed25519:3bSABeVuEqo442igK9Q9jMCm8jwvZ4Td1bYFhBQmJ5uSzLTTobyYSjz8G9tyD3UFS2ZBbneM91WtqJzpCtVT9ect',
-      contractId: 'dev-1636123728779-29153762080548',
-      methodName: 'nft_transfer_call',
-      args: `{
-        "token_id": "2",
-        "receiver_id": "abc2.eclipseer.linkdrop.testnet",
-        "msg": "ed25519:w4Nb233J1hzb6tywhabjTKjsAysz9Y9N3fbDwzG3BU6"
-      }`,
+      signerId: '',
+      signerSk: '',
+      contractId: '',
+      methodName: '',
+      args: `{}`,
       terraGas: '50',
       attachedDeposit: '',
     },

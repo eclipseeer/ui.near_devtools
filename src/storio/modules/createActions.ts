@@ -4,16 +4,9 @@ import { getObjectSlice, getPayload, mapSkeleton } from './utils';
 enablePatches(); // TODO enable only if we have a persistent data
 
 const execute = (store: any, action: any, payload: any, name: any, location: any) => {
-  const state = produce(
-    store.state.get(),
-    (draft: any) => {
-      action({ payload, state: draft, slice: getObjectSlice(draft, location) });
-    },
-    (patches, inversePatches) => {
-      console.log(...patches);
-      console.log(...inversePatches);
-    },
-  );
+  const state = produce(store.state.get(), (draft: any) => {
+    action({ payload, state: draft, slice: getObjectSlice(draft, location) });
+  });
   store.state.update(state);
 };
 

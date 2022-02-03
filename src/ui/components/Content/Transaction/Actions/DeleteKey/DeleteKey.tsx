@@ -11,9 +11,8 @@ export const DeleteKey = ({ action }: Props) => {
   const deleteKey = useStoreEffects((actions: any) => actions.actions.deleteKey);
   const methods = useForm({
     defaultValues: {
-      signerId: 'eclipseeer2.testnet',
-      signerSk:
-        'ed25519:rth5jioLiJiHUtRQ2i7Xebw1Frd2bMS45ufEZiErue15ME1kRnuzGfpTpQ9jFhekeJi1wQMmTiL4fKq7avbCxDU',
+      signerId: '',
+      signerSk: '',
       publicKey: '',
     },
   });

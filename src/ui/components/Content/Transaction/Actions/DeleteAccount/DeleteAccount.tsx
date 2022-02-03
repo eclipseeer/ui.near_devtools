@@ -11,9 +11,9 @@ export const DeleteAccount = ({ action }: Props) => {
   const deleteAccount = useStoreEffects((e: any) => e.actions.deleteAccount);
   const methods = useForm({
     defaultValues: {
-      signerId: 'abc2.eclipseer.linkdrop.testnet',
-      signerSk: 'ed25519:2W3McSV6SGxtiuPEGzjoXi8REqUoEJFAT65JKC9J77UzApSFQQvm9Q6ofWU1px1iVMLzQFWiE2gZ1jWc6f617guA',
-      beneficiaryId: 'eclipseer.linkdrop.testnet'
+      signerId: '',
+      signerSk: '',
+      beneficiaryId: ''
     },
   });
 

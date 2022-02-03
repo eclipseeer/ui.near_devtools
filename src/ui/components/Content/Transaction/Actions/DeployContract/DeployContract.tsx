@@ -31,7 +31,7 @@ export const DeployContract = () => {
         <Input register={register} name="signerSk" />
       </span>
       <span css={cls.inputLabel}>
-        Contract Id
+        Contract WASM
         <Input register={register} name="contractWasmFile" type="file" />
       </span>
       <button onClick={onSubmit}>Submit</button>
