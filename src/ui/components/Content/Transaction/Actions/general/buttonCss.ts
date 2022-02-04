@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const button = css`
-  height: 50px;
+  height: 45px;
   width: 200px;
   align-self: center;
   border: none;
