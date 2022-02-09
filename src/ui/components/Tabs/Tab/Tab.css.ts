@@ -10,21 +10,22 @@ const containerBase = css`
   border-radius: 10px;
   font-size: 14px;
   user-select: none;
+  &:first-child {
+    margin-top: 20px;
+  }
 `;
 
 const nonActiveContainer = css`
   ${containerBase};
-  background: rgb(145 118 176 / 50%);
   cursor: pointer;
-  &:hover {
-    background: rgb(145 118 176 / 65%);
-  }
+  border: 1px solid #c0b5cd;
 `
 
 const activeContainer = css`
   ${containerBase};
-  background: #9176b0;
+  background: #623d8b;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid #623d8b;
 `;
 
 export const cls = {
