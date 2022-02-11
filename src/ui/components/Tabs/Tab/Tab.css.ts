@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 const containerBase = css`
   height: 36px;
-  width: 160px;
+  width: calc(100% - 40px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@ const containerBase = css`
   border-radius: 10px;
   font-size: 14px;
   user-select: none;
-  &:first-child {
+  &:first-of-type {
     margin-top: 20px;
   }
 `;
@@ -19,7 +19,7 @@ const nonActiveContainer = css`
   ${containerBase};
   cursor: pointer;
   border: 1px solid #c0b5cd;
-`
+`;
 
 const activeContainer = css`
   ${containerBase};
