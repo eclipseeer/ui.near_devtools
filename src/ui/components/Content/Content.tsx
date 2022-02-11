@@ -4,9 +4,7 @@ import { KeyVault } from './KeyVault/KeyVault';
 import { cls } from './Content.css';
 
 export const Content = () => {
-  const [currentTab] = useStoreState([(state: any) => state.tabs.currentTab]);
-  // console.log(currentTab);
-
+  const currentTab = useStoreState((state: any) => state.tabs.currentTab);
   return (
     <div css={cls.container}>
       <h1>{currentTab.title}</h1>

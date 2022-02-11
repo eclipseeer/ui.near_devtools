@@ -2,6 +2,7 @@ import { useStoreState } from '../../../../storio';
 import { FunctionCall } from './Actions/FunctionCall/FunctionCall';
 import { CreateAccount } from './Actions/CreateAccount/CreateAccount';
 import { DeleteAccount } from './Actions/DeleteAccount/DeleteAccount';
+import { AddKey } from './Actions/AddKey/AddKey';
 import { DeleteKey } from './Actions/DeleteKey/DeleteKey';
 import { DeployContract } from './Actions/DeployContract/DeployContract';
 import { cls } from './Transaction.css';
@@ -21,10 +22,11 @@ export const Transaction = ({ actionId }: Props) => {
       {action.type === 'functionCall' && <FunctionCall action={action} />}
       {action.type === 'createAccount' && <CreateAccount action={action} />}
       {action.type === 'deleteAccount' && <DeleteAccount action={action} />}
+      {action.type === 'addKey' && <AddKey action={action} />}
       {action.type === 'deleteKey' && <DeleteKey action={action} />}
       {action.type === 'deployContract' && <DeployContract action={action} />}
       <h2>Outcome</h2>
-      <p>{outcome}</p>
+      <p css={cls.result}>{outcome}</p>
     </div>
   );
 };

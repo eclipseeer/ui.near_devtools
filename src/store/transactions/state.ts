@@ -1,5 +1,5 @@
 export const state = {
-  list: ['a1', 'a2', 'a3', 'a4', 'a5'],
+  list: ['a1', 'a2', 'a3', 'a4', 'a5', 'addKey'],
   map: {
     a1: {
       actionId: 'a1',
@@ -29,6 +29,16 @@ export const state = {
         signerId: '',
         signerSk: '',
         beneficiaryId: ''
+      },
+    },
+    addKey: {
+      actionId: 'addKey',
+      title: 'Add Key',
+      type: 'addKey',
+      formData: {
+        signerId: '',
+        signerSk: '',
+        publicKey: '',
       },
     },
     a4: {
