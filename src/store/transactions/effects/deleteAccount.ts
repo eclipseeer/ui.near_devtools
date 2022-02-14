@@ -1,22 +1,20 @@
-import { connect, KeyPair, keyStores } from 'near-api-js';
+import { getNearWithInMemoryKey } from '../helpers/getNearWithInMemoryKey';
 
-export const deleteAccount = async ({ payload }: any) => {
-  console.log('Start deletion', payload);
+export const deleteAccount = async ({ payload, slice, store }: any) => {
+  const { setOutcome } = slice.getActions();
+  const storeState = store.getState();
   const { signerId, signerSk, beneficiaryId } = payload;
 
-  const keyStore = new keyStores.InMemoryKeyStore();
-  await keyStore.setKey('testnet', signerId, KeyPair.fromString(signerSk));
-
-  const near = await connect({
-    headers: {},
-    networkId: 'testnet',
-    nodeUrl: 'https://rpc.testnet.near.org',
-    // networkId: 'mainnet',
-    // nodeUrl: 'https://rpc.mainnet.near.org',
-    keyStore,
-  });
-
+  const near = await getNearWithInMemoryKey(signerId, signerSk, storeState.environment.current);
   const acc = await near.account(signerId);
-  const res = await acc.deleteAccount(beneficiaryId);
-  console.log(res);
+
+  try {
+    const res = await acc.deleteAccount(beneficiaryId);
+    console.log(res);
+    setOutcome(JSON.stringify(res));
+  } catch (e) {
+    console.log(e);
+    // @ts-ignore
+    setOutcome(e.toString());
+  }
 };

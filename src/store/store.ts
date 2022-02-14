@@ -1,6 +1,7 @@
 import { createStore } from '../storio';
 import { tabs } from './tabs/tabs';
 import { transactions } from './transactions';
+import { environment } from './environment/environment';
 
 export const store = createStore({
   state: {
@@ -8,13 +9,13 @@ export const store = createStore({
   },
   persistent: {
     localStorage: {
-      include: ['tabs.runtimeData'], // error - slice name
+      include: ['tabs.runtimeData'], // error - slice name - only data from state
     },
   },
   slices: {
     tabs,
     actions: transactions,
-    environment: {},
+    environment,
     keyVault: {},
   },
 });
