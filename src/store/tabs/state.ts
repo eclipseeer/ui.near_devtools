@@ -6,7 +6,7 @@ export const state = {
     type: 'action',
     actionId: 'a1',
   },
-  list: ['deleteAccount', 'addKey', 'deleteKey', 'deployContract', 'functionCall'],
+  list: ['deleteAccount', 'addKey', 'deleteKey', 'deployContract', 'functionCall', 'utils'],
   map: {
     functionCall: {
       tabId: 'functionCall',
@@ -44,5 +44,10 @@ export const state = {
       type: 'action',
       actionId: 'a5',
     },
+    utils: {
+      tabId: 'utils',
+      title: 'Utils',
+      type: 'utils',
+    }
   },
 };

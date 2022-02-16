@@ -3,7 +3,6 @@ import { Select } from '../../general/Select/Select';
 import { useStoreActions, useStoreState } from '../../../../storio';
 import { useMemo } from 'react';
 
-// TODO create selector
 const getOptions = (environment: any) =>
   environment.list.map((id: string) => ({
     value: id,
@@ -15,10 +14,12 @@ export const SelectEnvironment = () => {
   const select = useStoreActions((a: any) => a.environment.select);
   const options = useMemo(() => getOptions(environment), [environment]);
 
-  console.log(options);
-  console.log(environment);
-
   return (
-    <Select value={environment.current.id} options={options} onChange={select} styles={cls.select} />
+    <Select
+      value={environment.current.id}
+      options={options}
+      onChange={select}
+      styles={cls.select}
+    />
   );
 };
