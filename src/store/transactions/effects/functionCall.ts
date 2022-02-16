@@ -1,28 +1,19 @@
-import { connect, KeyPair, keyStores } from 'near-api-js';
 import BN from 'bn.js';
 import { parseNearAmount } from 'near-api-js/lib/utils/format';
+import { getNearWithInMemoryKey } from '../helpers/getNearWithInMemoryKey';
 // import { parseSeedPhrase } from 'near-seed-phrase';
 
 const toGas = (terraGas: string | number) => new BN(Number(terraGas) * 1000000000000);
 
-export const functionCall = async ({ payload }: any) => {
-  console.log('Start functionCall', payload);
+export const functionCall = async ({ payload, slice, store }: any) => {
   const { signerId, signerSk, contractId, methodName, args, terraGas, attachedDeposit } = payload;
+  const { setOutcome } = slice.getActions();
+  const storeState = store.getState();
 
-  const keyStore = new keyStores.InMemoryKeyStore();
-  await keyStore.setKey('testnet', signerId, KeyPair.fromString(signerSk));
-
-  const near = await connect({
-    headers: {},
-    networkId: 'testnet',
-    nodeUrl: 'https://rpc.testnet.near.org',
-    // networkId: 'mainnet',
-    // nodeUrl: 'https://rpc.mainnet.near.org',
-    keyStore,
-  });
+  const near = await getNearWithInMemoryKey(signerId, signerSk, storeState.environment.current);
+  const acc = await near.account(signerId);
 
   try {
-    const acc = await near.account(signerId);
     const res = await acc.functionCall({
       args: JSON.parse(args), // TODO Don't use JSON.parse
       contractId,
@@ -31,6 +22,7 @@ export const functionCall = async ({ payload }: any) => {
       attachedDeposit: parseNearAmount(attachedDeposit),
     });
     console.log(res);
+    setOutcome(JSON.stringify(res));
   } catch (e) {
     console.log(e);
   }

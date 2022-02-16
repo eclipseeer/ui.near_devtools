@@ -1,16 +1,18 @@
 import { cls } from './Select.css';
 
-export const Select = ({ action, css, onChange }: any) => {
-  console.log(action);
-  return (
-    <select
-      css={[cls.select, css]}
-      onChange={(e) => onChange(e.target.value)}
-      value={action.type}
-    >
-      <option value="deleteAccount">Delete Account</option>
-      <option value="functionCall">Function Call</option>
-      <option value="createAccount">Create Account</option>
-    </select>
-  );
-};
+interface Props {
+  value: any;
+  onChange: any;
+  options: any;
+  styles?: any;
+}
+
+export const Select = ({ styles, value, onChange, options }: Props) => (
+  <select css={[cls.select, styles]} onChange={(e) => onChange(e.target.value)} value={value}>
+    {options.map((option: any) => (
+      <option key={option.value} value={option.value}>
+        {option.label}
+      </option>
+    ))}
+  </select>
+);
